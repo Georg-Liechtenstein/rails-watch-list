@@ -1,0 +1,8 @@
+<h1> Add a new movie to <%= @list.name %> </h1>
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment, placeholder: "Your comment here", hint: 'Minimum 6 characters' %>
+  <%= f.association :movie, prompt: "Select a movie" %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Go back to genre overview', list_path(@list) %>
